@@ -1,5 +1,6 @@
 # Exercise 5: Gates Foundation Educational Grants
 
+
 # Read data into a variable called `grants` using the `read.csv` function
 
 
@@ -34,3 +35,16 @@
 
 
 # How many grants were awarded in 2010?
+getwd()
+grants <- read.csv('data/gates_money.csv')
+spending <- grants$total_amount
+is.vector(spending)
+org <- grants$organization
+as.vector(org)
+org <- as.vector(org)
+mean.grant <- mean(spending)
+max.grant <- max(spending)
+min.grant <- min(spending)
+max.grant.org <- org[spending == max.grant]
+min.grant.org <- org[spending == min.grant]
+grants.2010 <- length(org[grants$start_year == 2010])
