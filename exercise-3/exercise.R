@@ -54,3 +54,14 @@
 # Repeat the above experiment 100 times, tracking the loss each time.
 # Does the average loss equal what you expect?
 # What about 10,000 times?
+
+employees <- "Employee"
+employees <- paste(employees, 1:100)
+salary <- runif(100, min=10000, max = 50000)
+salary2 <- runif(100, min = 15000, max = 55000)
+salaries <- data.frame(salary, salary2)
+salaries$raise <- salary2-salary
+salaries$got.raise <- salaries$raise > 0
+row.names(salaries) <- employees
+salaries [['Employee 5']]
+x

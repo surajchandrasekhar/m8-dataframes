@@ -20,3 +20,14 @@
 
 # Assign your dataframe rownames of their opponents
 
+scored <- c(12, 3, 37, 27)
+allowed <- c(10, 9, 18,17)
+seahawks <- data.frame(scored, allowed)
+seahawks$diff <- scored-allowed
+seahawks$diff
+seahawks$won <- seahawks$diff > 0 
+won
+seahawks$won
+opponents <- c("Dolphins", "Rams", "49ers", "Jets")
+row.names(seahawks) <- opponents
+View(seahawks)
