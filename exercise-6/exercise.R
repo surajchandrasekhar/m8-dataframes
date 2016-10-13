@@ -35,3 +35,31 @@
 # a sentence with how popular that name was in that year
 
 # How popular was the name 'Laura' in 1995
+getwd()
+female.names <- read.csv('data/female_names.csv')
+year <- female.names$year
+is.vector(year)
+name <- as.vector(female.names$name)
+is.vector(name)
+prop <- female.names$prop
+names.2013 <- name[year == 2013]
+prop.2013 <- prop[year == 2013]
+max.prop.2013 <- max(prop.2013)
+pop.name.2013 <- name[prop == max.prop.2013]
+MostPopular <- function(my.year) {
+ max.prop.year <- max(prop[year == my.year])  
+ pop.name <- name[prop == max.prop.year]
+ answer <- sprintf("%s had the most popular name in %s", pop.name, my.year)
+ return(answer)
+}
+pop.name.1994 <- MostPopular(1994)
+
+#bonus
+HowPopular <- function(my.name, my.year) {
+  name.tmp <- name[year==my.year]
+  prop.tmp <- prop[year == my.year]
+  pop <- round(prop.tmp[name.tmp == my.name],4)*100
+  answer <- sprintf("%s in %s had a frequency of %s",my.name,my.year,pop)
+  return(answer)
+}
+laura.pop <- HowPopular("Laura", 1995)
